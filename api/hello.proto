@@ -1,0 +1,23 @@
+// protoのバージョンを指定
+syntax = "proto3";
+
+// protoファイルから自動生成されるGoのコードの置き先を指定
+option go_package = "pkg/grpc";
+
+// パッケージの宣言
+package myapp;
+
+// サービスの定義
+service GreetingService {
+  // メソッドの定義
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
+
+// 型の定義
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
